@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>APP NAME: A coding challenge</title>
+    <title>Loan Facts: A coding challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,18 +21,18 @@
 
 
     <!-- custom css -->
-    <link rel="shortcut icon" href="/img/light-logo - favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/LoanWIZ.svg" type="image/x-icon">
     <link rel="stylesheet" href="/css/themes.css">
     <link rel="stylesheet" href="/css/site.css">
 
 
 </head>
 
-<body data-bac-theme="purple">
+<body data-bac-theme="green">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-xxl">
-                <a class="navbar-brand" href="/index.html"> <img src="img/APPNAMELogo.svg" height="30">App Name</a>
+                <a class="navbar-brand" href="/index.html"> <img src="/img/LoanWIZ.svg" height="30">Loan Facts</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                     aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
                             <a class="nav-link" href="/index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/app.html">The App</a>
+                            <a class="nav-link active" aria-current="page" href="/app.html">Loan Wiz</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/code.html">The Code</a>
@@ -59,10 +59,53 @@
 
     <main class="container-xxl py-3 mt-5">
 
-        <h1>APP UI GOES HERE</h1>
-        <label>Secret Message</label>
-        <input id="message" type="text" value="hi" placeholder="Enter a Message">
-        <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+        <div class="row">
+            <div class="col-4 border border-1">
+                <form action="#">
+                    <div class="row m-1 g-3">
+                        <div class="col-12">
+                            <label for="loanAmount" class="form-label">Loan Amount</label>
+                            <input type="number" id="loanAmount" name="loanAmount" class="form-control"
+                                placeholder="Loan Amount" aria-label="Loan Amount" required value="0">
+                        </div>
+                        <div class="col-12">
+                            <label for="termMonths" class="form-label">Term (Months)</label>
+                            <input type="number" id="termMonths" name="termMonths" class="form-control"
+                                placeholder="Term" aria-label="Term" required value="0">
+                        </div>
+                        <div class="col-12">
+                            <label for="interestRate" class="form-label">Interest Rate (%)</label>
+                            <input type="number" id="interestAmount" name="interestRate" class="form-control"
+                                placeholder="Interest Rate" aria-label="Interest Rate" required value="0">
+                        </div>
+                    </div>
+                    <button type="button" id="btnSubmit" class="btn btn-primary m-2">Submit</button>
+                </form>
+            </div>
+            <div class="col-8 border border-1 py-3">
+                <h1 class="text-center">Your Monthly Payments:</h1>
+                <h2 class="text-center" id="totalMonthlyPay"></h2>
+                <h5 class="text-center" id="totalPrincipal"></h5>
+                <h5 class="text-center" id="totalInterest"></h5>
+                <h5 class="text-center" id="totalCost"></h5>
+            </div>
+        </div>
+        <div class="table-responsive py-2">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Payment</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>Total Interest</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody id="results">
+                </tbody>
+            </table>
+        </div>
 
     </main>
 
@@ -73,7 +116,7 @@
                     &copy; 2024 Bryan Cordova
                 </div>
                 <div class="col text-center">
-                    <img src="/img/APPNAMELogo.svg" height="30">
+                    <img src="/img/LoanWIZ.svg" height="30">
                 </div>
                 <div class="col text-center text-lg-end">
                     <a href="https://github.com/CordoBry9" class="text-decoration-none" target="_blank">
@@ -98,7 +141,7 @@
         </script>
 
 
-        <!-- Sweet alert JS -->
+    <!-- Sweet alert JS -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -109,7 +152,7 @@
 
     <script>
         let button = document.getElementById('btnSubmit');
-        button.addEventListener('click', displayMessage);
+        button.addEventListener('click', getInput);
     </script>
 
 
