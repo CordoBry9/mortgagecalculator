@@ -284,7 +284,7 @@
     --bac-theme-900: var(--bac-yellow-900);
 }
 
-[data-bac-theme="green"] {
+[data-bac-theme="purple"] {
     --bac-theme-core: #198754;
     --bac-theme-100: hsl(152, 38%, 95%);
     --bac-theme-150: hsl(152, 38%, 90%);
