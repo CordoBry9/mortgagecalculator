@@ -87,7 +87,7 @@ function displayResults(completeCalc) {
     totalPrincipal.textContent = `Total Principal: $${completeCalc.totalPrincipalPaid.toFixed(2)}`;
     totalInterest.textContent = `Total Interest: $${completeCalc.totalInterestPaid.toFixed(2)}`;
     totalCost.textContent = `Total Cost: $${completeCalc.totalPayments.toFixed(2)}`;
-    totalMonthly.textContent = completeCalc.totalMonthlyPayment.toFixed(2);
+    totalMonthly.textContent = `$${completeCalc.totalMonthlyPayment.toFixed(2)}`;
 
 
     resultsTable.innerHTML = '';
