@@ -45,7 +45,7 @@ function loanCalc(months, interest, loan) {
         let principalPayment = totalMonthlyPayment - interestPayment;
         remainingBalance -= principalPayment; //subtracts and makes equal the new value
 
-        totalInterestPaid += interestPayment; 
+        totalInterestPaid += interestPayment;
         totalPrincipalPaid += principalPayment; //adds and makes it = the new value
 
         //store the information somehow
@@ -89,27 +89,27 @@ function displayResults(completeCalc) {
     totalCost.textContent = `Total Cost: $${completeCalc.totalPayments.toFixed(2)}`;
     totalMonthly.textContent = completeCalc.totalMonthlyPayment.toFixed(2);
 
-        
+
     resultsTable.innerHTML = '';
 
     completeCalc.paymentDetails.forEach(monthPaid => {
-        
+
         resultsTable.innerHTML += `<tr>
          <td>${monthPaid.month.toFixed(0)}</td>
          <td>$${monthPaid.totalMonthlyPayment.toFixed(2)}</td>
          <td>$${monthPaid.principalPayment.toFixed(2)}</td>
          <td>$${monthPaid.interestPayment.toFixed(2)}</td>
          <td>$${monthPaid.totalInterestPaid.toFixed(2)}</td>
-         <td>$${monthPaid.remainingBalance.toFixed(2)}</td></tr>`;
+         <td>$${Math.abs(monthPaid.remainingBalance).toFixed(2)}</td></tr>`;
 
     });
 
-    
 
-    
+
+
 
     // resultsTable.innerHTML = "<tr>"
-    
+
     // for (let i = 0; i < completeCalc.paymentDetails.length; i += 1) {
 
     //     let monthpaid = completeCalc.paymentDetails[i];
